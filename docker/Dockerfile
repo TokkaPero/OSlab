@@ -7,7 +7,7 @@ RUN apt-get update && apt-get -y upgrade && apt -y install nginx && apt-get clea
     useradd Anatoly && groupadd Perov && usermod -aG Anatoly Perov && \
     chown -R Anatoly:Perov /var/www/AnatolyPerov.com/ && \
     sed -i 's/\/var\/www\/html/\/var\/www\/AnatolyPerov/g' /etc/nginx/sites-enabled/default && \
-    sed -i 's/user www-data/user Alexandr/g' /etc/nginx/nginx.conf
+    sed -i 's/user www-data/user Anatoly/g' /etc/nginx/nginx.conf
 ADD index.html /var/www/AnatolyPerov.com/
 ADD img.jpg /var/www/AnatolyPerov.com/img/
 CMD ["nginx", "-g", "daemon off;"]
